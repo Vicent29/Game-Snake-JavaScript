@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#game-screen{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border: 5px solid blue;
+    box-shadow: 2px 2px 50px rgb(204, 8, 8);
+}
+
+#gameOver {
+    position: absolute;
+    visibility: hidden;
+  margin-left: 30%;
+    z-index: 2;
+}
+
+#playHUD {
+    position: absolute;
+    visibility: hidden;
+    background-color: rgb(0, 60, 255);
+    color: aliceblue;
+    width: 17%;
+    height:25%;
+    margin-left:5%;
+    margin-top:10%;
+    border: solid black 5px;
+    border-radius: 10px;
+}
+#titleStats {
+    font-family: 'Indie Flower', cursive;
+    background-color: red;
+    text-align: center;
+    margin-top: 0%;
+    border: 0.5rem solid white;
+}
+ #stats {
+    margin-top: 5%;
+    margin-left: 5%;
+    text-align: left;
+
+ }
+
+.title {
+    font-size: 70px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: 'Indie Flower', cursive;
+    color: rgb(0, 60, 255);
+    text-align: center;
+}
+
+#restartButton {
+    border: 2px solid rgb(243, 243, 243);
+    border-radius: 10px;
+    font-family: 'Indie Flower', cursive;
+    color: rgb(246, 246, 247);
+    text-align: center;
+    font-weight: bold;
+    background-color: black;
+}
+
+#restartButton:hover {
+    background-color: yellowgreen;
+}
+
+#scoreboard {
+    margin: 0px;
+}
