@@ -1,4 +1,4 @@
-//Declaration variables
+//Declaration variables snake
 let snake;
 let snakeLength;
 let snakeSize;
@@ -15,16 +15,16 @@ let gameOverMenu;
 let restartButton;
 let playHUD;
 
-let TopSanke = 0;
+let TopScoreSnake = 0;
 
-// Calling variables
+// call variables to start the game
 
 gameInitialize();
 snakeInitialize();
 foodInitialize();
 setInterval(gameLoop, 4000 / 40);
 
-// Function starting the game
+// Function starting the game and initialize the variables for the board
 
 function gameInitialize() {
     let game_screen = document.getElementById("game-screen");
@@ -36,7 +36,7 @@ function gameInitialize() {
     game_screen.width = screenWidth;
     game_screen.height = screenHeight;
 
-    document.addEventListener("keydown", keyboardHandler);
+    document.addEventListener("keydown", KeyboardListener);
 
     gameOverMenu = document.getElementById("gameOver");
     centerMenuPosition(gameOverMenu);
@@ -73,7 +73,7 @@ function gameRestart() {
     setState("PLAY");
 }
 
-// Functions start the snake
+// Functions start the snake and declare the variables of the grandaria and do the push every time an object is eaten
 
 function snakeInitialize() {
     snake = [];
@@ -89,7 +89,7 @@ function snakeInitialize() {
     }
 }
 
-//Function to put the image of the snake's head at the beginning of the snake
+// Function to be able to put photos in the different objects and the head of the snake
 function make_base(img) {
     base_image = new Image();
     base_image.src = img;
@@ -103,7 +103,7 @@ function snakeDraw() {
     for (let index = 0; index < snake.length; index++) {
         if (index == 1 || index == 0) {
             context.fillStyle = "red";
-            make_base('https://i.postimg.cc/MpkX6Gwx/headsnake.png');
+            // make_base('https://i.postimg.cc/MpkX6Gwx/headsnake.png');
         } else {
             context.fillStyle = "blue";
         }
@@ -112,6 +112,54 @@ function snakeDraw() {
         context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
     }
 }
+
+// Functions eating pixels and draw the food pixels randomly inside the canvas
+
+function foodInitialize() {
+    food = {
+        x: 0,
+        y: 0
+    };
+    setFoodPosition();
+}
+
+function foodDraw() {
+
+    context.fillStyle = "orange";
+    context.fillRect(food.x * snakeSize, food.y * snakeSize, 25, 25);
+}
+
+function setFoodPosition() {
+    // con esto podemos pintar la manzana pero nos falta el posicionamiento
+
+    // const img = new Image()
+    // img.src = "./img/apple.png"
+    // img.onload = () => {
+    //     context.drawImage(img, 0, 0)
+    
+    // }
+
+    let randomX = Math.floor(Math.random() * screenWidth);
+    let randomY = Math.floor(Math.random() * screenHeight);
+
+    food.x = Math.floor(randomX / snakeSize);
+    food.y = Math.floor(randomY / snakeSize);
+}
+
+// function for when the snake eats the food
+
+function checkFoodCollisions(snakeHeadX, snakeHeadY) {
+    if (snakeHeadX == food.x && snakeHeadY == food.y) {
+        snake.push({
+            x: 0,
+            y: 0
+        });
+        snakeLength++;
+        setFoodPosition();
+    }
+}
+
+// Snake and collision control functions (detecting the "x" and "y" position of the snake's head and making sure it doesn't touch any of the pixels that close the canvas)
 
 function snakeUpdate() {
     let snakeHeadX = snake[0].x;
@@ -140,51 +188,23 @@ function snakeUpdate() {
     snake.unshift(snakeTail);
 }
 
-// Functions eating pixels
+function KeyboardListener(event) {
 
-function foodInitialize() {
-    food = {
-        x: 0,
-        y: 0
-    };
-    setFoodPosition();
-}
-
-function foodDraw() {
-    context.fillStyle = "orange";
-    context.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize);
-}
-
-function setFoodPosition() {
-    let randomX = Math.floor(Math.random() * screenWidth);
-    let randomY = Math.floor(Math.random() * screenHeight);
-
-    food.x = Math.floor(randomX / snakeSize);
-    food.y = Math.floor(randomY / snakeSize);
-}
-
-// Input functions and Control functions
-
-function keyboardHandler(event) {
-
+    // Play with the arrows
     if (event.keyCode == "39" && snakeDirection != "left") {
-        console.log("DERECHA");
         snakeDirection = "right";
     }
     else if (event.keyCode == "40" && snakeDirection != "up") {
-        console.log("ABAJO");
         snakeDirection = "down";
     }
     if (event.keyCode == "37" && snakeDirection != "right") {
-        console.log("IZQUIERDA");
         snakeDirection = "left";
     }
     else if (event.keyCode == "38" && snakeDirection != "down") {
-        console.log("ARRIBA");
         snakeDirection = "up";
     }
 
-
+    // Play with the W/A/S/D
     if (event.keyCode == "68" && snakeDirection != "left") {
         snakeDirection = "right";
     }
@@ -200,19 +220,6 @@ function keyboardHandler(event) {
 
     if (event.keyCode == "13" && snakeDirection != "enter") {
         gameRestart();
-    }
-}
-
-// Functions eat food
-
-function checkFoodCollisions(snakeHeadX, snakeHeadY) {
-    if (snakeHeadX == food.x && snakeHeadY == food.y) {
-        snake.push({
-            x: 0,
-            y: 0
-        });
-        snakeLength++;
-        setFoodPosition();
     }
 }
 
@@ -272,8 +279,8 @@ function drawScoreboard() {
 
 function drawTopScore() {
 
-    if (snakeLength >= TopSanke) {
-        TopSanke = snakeLength;
+    if (snakeLength >= TopScoreSnake) {
+        TopScoreSnake = snakeLength;
     }
-    top_score.innerHTML = "Top score:   " + TopSanke;
+    top_score.innerHTML = "Top score:   " + TopScoreSnake;
 }
