@@ -89,12 +89,12 @@ function snakeInitialize() {
     }
 }
 
-// Function to be able to put photos in the different objects and the head of the snake
-function make_base(img) {
+// Function to be able to put photos in the different objects and the head of the snake telling him the position in x and in y. (in progress)
+function make_base(img, x, y) {
     base_image = new Image();
     base_image.src = img;
     base_image.onload = function () {
-        context.drawImage(base_image, 0, 0);
+        context.drawImage(base_image, x, y);
     }
 }
 
@@ -102,14 +102,13 @@ function make_base(img) {
 function snakeDraw() {
     for (let index = 0; index < snake.length; index++) {
         if (index == 1 || index == 0) {
-            context.fillStyle = "red";
-            // make_base('https://i.postimg.cc/MpkX6Gwx/headsnake.png');
-        } else {
             context.fillStyle = "blue";
+        } else {
+            context.fillStyle = "white";
         }
-        context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
+        context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, 25, 25);
         context.strokeStyle = "black";
-        context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
+        context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, 25, 25);
     }
 }
 
@@ -124,21 +123,13 @@ function foodInitialize() {
 }
 
 function foodDraw() {
-
-    context.fillStyle = "orange";
+    const color=["red","blue"];
+    context.fillStyle = color[Math.floor(Math.random() * color.length)];
     context.fillRect(food.x * snakeSize, food.y * snakeSize, 25, 25);
 }
 
 function setFoodPosition() {
-    // con esto podemos pintar la manzana pero nos falta el posicionamiento
-
-    // const img = new Image()
-    // img.src = "./img/apple.png"
-    // img.onload = () => {
-    //     context.drawImage(img, 0, 0)
-    
-    // }
-
+   
     let randomX = Math.floor(Math.random() * screenWidth);
     let randomY = Math.floor(Math.random() * screenHeight);
 
