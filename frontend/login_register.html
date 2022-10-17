@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Snake</title>
+    <link rel="stylesheet" href="./css/login_register.css">
+    <link rel="stylesheet" href="./css/style_header.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="content-header">
+            <div id="header">
+                <div class="logo">
+                    <a href="./index.html" title="jagoampAMP"><img src="./img/logo_snake.png" hight="250px" width="150px"></img></a>
+                </div>
+            </div>
+            <div class="jagoampNav" id="Navigasi">
+                <div class="widget HTML">
+                    <input id="toggle" type="checkbox">
+                    <label class="menu-btn" for="toggle"><span class="show"></span><span class="hide"></span></label>
+                    <nav class="navigation">
+                        <ul>
+                            <li><a href="./index.html">Play</a></li>
+                            <li>
+                                <input class="expand" id="drop-1" type="checkbox">
+                                <label class="drop" for="drop-1">Leaderboard</label>
+                                <ul class="drop-menu">
+                                    <li><a href="#">Easy level</a></li>
+                                    <li><a href="#">Medium level</a></li>
+                                    <li><a href="#">Expert level</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="jagoamp-search">
+                <a href="./login_register.html" class="det-button"></a>
+            </div>
+            <div class="darkjagoamp">
+                <input aria-label="checkbox" class="checkbox" id="darkjagoamp" onclick="dark_mode()" type="checkbox">
+                <label class="darkIcon" for="darkjagoamp"><span class="darkmode" title="Dark Theme"></span><span class="lightmode"></span></label>
+            </div>
+        </div>
+    </header>
+    <div class="div_login_register">
+        <h1>Soy el login y el register</h1>
+    </div>
+    <script src="controllers/snake.js"></script>
+    <script src="controllers/login_register.js"></script>
+</body>
+
+</html>

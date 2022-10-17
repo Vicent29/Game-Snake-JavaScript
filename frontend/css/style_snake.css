@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,29 +9,31 @@ body {
 
 #game-screen{
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    float: right;
     transform: translate(-40%, -50%);
     z-index: 1;
     border: 5px solid blue;
     box-shadow: 2px 2px 50px rgb(204, 8, 8);
+    height: 70%;
+    margin-right: 6%;
+    z-index: 99;
 }
 
 #gameOver {
     position: absolute;
     visibility: hidden;
-     margin-left: 35%;
+    margin-left: 42%;
+    margin-top: -12%;
     z-index: 2;
 }
 
 #playHUD {
-    position: absolute;
+    position: relative;
     visibility: hidden;
     background-color: rgb(0, 60, 255);
     color: aliceblue;
     width: 17%;
-    height:25%;
+    height:27%;
     margin-left:5%;
     margin-top:10%;
     border: solid black 5px;
@@ -38,13 +44,12 @@ body {
     background-color: red;
     text-align: center;
     margin-top: 0%;
-    border: 0.5rem solid white;
+    border: 0.5rem solid rgb(254, 253, 253);
 }
  #stats {
     margin-top: 5%;
     margin-left: 5%;
     text-align: left;
-
  }
 
 .title {
@@ -57,7 +62,7 @@ body {
 }
 
 #restartButton {
-    border: 2px solid rgb(243, 243, 243);
+    border: 2px solid rgb(197, 193, 193);
     border-radius: 10px;
     font-family: 'Indie Flower', cursive;
     color: rgb(246, 246, 247);
@@ -72,4 +77,8 @@ body {
 
 #scoreboard {
     margin: 0px;
+}
+
+#page_snake  {
+    position: relative;
 }

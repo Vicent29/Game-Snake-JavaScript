@@ -123,13 +123,13 @@ function foodInitialize() {
 }
 
 function foodDraw() {
-    const color=["red","blue"];
+    const color = ["red", "blue"];
     context.fillStyle = color[Math.floor(Math.random() * color.length)];
     context.fillRect(food.x * snakeSize, food.y * snakeSize, 25, 25);
 }
 
 function setFoodPosition() {
-   
+
     let randomX = Math.floor(Math.random() * screenWidth);
     let randomY = Math.floor(Math.random() * screenHeight);
 
@@ -275,3 +275,19 @@ function drawTopScore() {
     }
     top_score.innerHTML = "Top score:   " + TopScoreSnake;
 }
+
+// change background page (dark mode)
+
+function change_Dark_mode() {
+    document.querySelectorAll(".checkbox").forEach(function (e) {
+        "darkmode" === localStorage.getItem("mode") ? e.checked = !0 : e.checked = !1
+    })
+}
+function dark_mode() {
+    localStorage.setItem("mode", "darkmode" === localStorage.getItem("mode") ? "light" : "darkmode"), "darkmode" === localStorage.getItem("mode") ? document.querySelector("body").classList.add("jagoampDark") : document.querySelector("body").classList.remove("jagoampDark"), change_Dark_mode()
+}
+function darkModeHide() {
+    document.querySelectorAll(".darkjagoamp").forEach(function (e) { e.parentNode.removeChild(e) })
+}
+
+(localStorage.getItem('mode')) === 'darkmode' ? document.querySelector('body').classList.add('jagoampDark') : document.querySelector('body').classList.remove('jagoampDark')

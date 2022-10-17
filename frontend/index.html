@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>SNAKE GAME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="./img/icon_web.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/style_snake.css">
+    <link rel="stylesheet" href="css/style_header.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="content-header">
+            <div id="header">
+                <div class="logo">
+                    <a href="./index.html" title="jagoampAMP"><img src="./img/logo_snake.png" hight="250px" width="150px"></img></a>
+                </div>
+            </div>
+            <div class="jagoampNav" id="Navigasi">
+                <div class="widget HTML">
+                    <input id="toggle" type="checkbox">
+                    <label class="menu-btn" for="toggle"><span class="show"></span><span class="hide"></span></label>
+                    <nav class="navigation">
+                        <ul>
+                            <li><a href="./index.html">Play</a></li>
+                            <li>
+                                <input class="expand" id="drop-1" type="checkbox">
+                                <label class="drop" for="drop-1">Leaderboard</label>
+                                <ul class="drop-menu">
+                                    <li><a href="#">Easy level</a></li>
+                                    <li><a href="#">Medium level</a></li>
+                                    <li><a href="#">Expert level</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="jagoamp-search">
+                <a href="./login_register.html" class="det-button"></a>
+            </div>
+            <div class="darkjagoamp">
+                <input aria-label="checkbox" class="checkbox" id="darkjagoamp" onclick="dark_mode()" type="checkbox">
+                <label class="darkIcon" for="darkjagoamp"><span class="darkmode" title="Dark Theme"></span><span class="lightmode"></span></label>
+            </div>
+        </div>
+    </header>
+    <div id="page_snake">
+        <section id="playHUD">
+            <div id="titleStats">
+                <h2>STATS SNAKE</h2>
+            </div>
+            <div id="stats">
+                <h2 id="scoreboard"></h2>
+                <h2 id="top_score"></h2>
+            </div><br>
+            <h3 id="restartButton">🐍START THE GAME🐍</h3>
+        </section>
+        <section id="gameOver">
+            <h1 class="title">Game Over!</h1>
+            <h3 id="restartButton">🐍ENTER for Restart the Game🐍</h3>
+        </section>
+        <canvas id="game-screen"></canvas>
+
+        <script src="controllers/snake.js"></script>
+    </div>
+</body>
+
+</html>
