@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="./img/icon_web.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/style_snake.css">
     <link rel="stylesheet" href="css/style_header.css">
-
 </head>
 
 <body>
@@ -16,7 +15,8 @@
         <div class="content-header">
             <div id="header">
                 <div class="logo">
-                    <a href="./index.html" title="jagoampAMP"><img src="./img/logo_snake.png" hight="250px" width="150px"></img></a>
+                    <a href="../index.html" title="jagoampAMP"><img src="./img/logo_snake.png" hight="250px"
+                            width="150px"></img></a>
                 </div>
             </div>
             <div class="jagoampNav" id="Navigasi">
@@ -25,14 +25,14 @@
                     <label class="menu-btn" for="toggle"><span class="show"></span><span class="hide"></span></label>
                     <nav class="navigation">
                         <ul>
-                            <li><a href="./index.html">Play</a></li>
+                            <li><a href="./index.html"><b>Play</b></a></li>
                             <li>
                                 <input class="expand" id="drop-1" type="checkbox">
-                                <label class="drop" for="drop-1">Leaderboard</label>
+                                <label class="drop" for="drop-1"><b>Leaderboard</b></label>
                                 <ul class="drop-menu">
-                                    <li><a href="#">Easy level</a></li>
-                                    <li><a href="#">Medium level</a></li>
-                                    <li><a href="#">Expert level</a></li>
+                                    <li><a onclick="show_laderboard('easy')">Easy level</a></li>
+                                    <li><a onclick="show_laderboard('medio')">Medium level</a></li>
+                                    <li><a onclick="show_laderboard('pro')">Expert level</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -40,33 +40,80 @@
                 </div>
             </div>
             <div class="jagoamp-search">
-                <a href="./login_register.html" class="det-button"></a>
+                <a href="./login_register.html" class="det-button" id="btn_login"></a>
+                <div class="div_user div_hide" id="div_user">
+                    <img id="avatar" alt="">
+                    <p id="name" class="name">Vicent</p>
+                    <button class="btn_logout" onclick="logout()"></button>
+                </div>
             </div>
             <div class="darkjagoamp">
                 <input aria-label="checkbox" class="checkbox" id="darkjagoamp" onclick="dark_mode()" type="checkbox">
-                <label class="darkIcon" for="darkjagoamp"><span class="darkmode" title="Dark Theme"></span><span class="lightmode"></span></label>
+                <label class="darkIcon" for="darkjagoamp"><span class="darkmode" title="Dark Theme"></span><span
+                        class="lightmode"></span></label>
             </div>
         </div>
     </header>
     <div id="page_snake">
         <section id="playHUD">
             <div id="titleStats">
-                <h2>STATS SNAKE</h2>
+                <h2> CONFIGURE THE SNAKE</h2>
             </div>
-            <div id="stats">
-                <h2 id="scoreboard"></h2>
-                <h2 id="top_score"></h2>
-            </div><br>
-            <h3 id="restartButton">🐍START THE GAME🐍</h3>
+
+            <form id="settings" class="div_set" autocomplete="off">
+                <div class="dificult">
+                    <p>Dificult Mode:</p>
+                    <select name="select" id="dificult">
+                        <!-- <option value="default">default</option> -->
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="pro">Pro</option>
+                    </select>
+                </div>
+
+                <div class="Chead">
+                    <p>Head Color: </p>
+                    <input type="color" class="input" id="Chead">
+                </div>
+                <div class="CBody">
+                    <p>Body Color:</p>
+                    <input type="color" class="input" id="CBody">
+                </div>
+                <div class="CBoard">
+                    <p>Board Color:</p>
+                    <input type="color" class="input" id="CBoard">
+                </div>
+                <a id="restartSet" class="resetSettings">🐍RESTART🐍</a>
+                <a id="restartButton" class="submitSettings">🐍START🐍</a>
+            </form>
         </section>
+        <div class="border">
+            <div class="currenyScore">
+                <p>Currently Score:</p>
+                <p id="scoreboard"></p>
+            </div>
+        </div>
+
         <section id="gameOver">
             <h1 class="title">Game Over!</h1>
-            <h3 id="restartButton">🐍ENTER for Restart the Game🐍</h3>
+            <h3 id="restartButton" class="reset_canvas">🐍ENTER for Restart the Game🐍</h3>
         </section>
         <canvas id="game-screen"></canvas>
 
-        <script src="controllers/snake.js"></script>
+
+        <section id="div_lader">
+            <div class="cont_lader">
+                <h2 id="titlelader"></h2>
+                <table id="table_lader" class="table_lader"></table>
+            </div>
+        </section>
+
     </div>
 </body>
+<!-- CONTROLLERS -->
+<script src="controllers/snake.js"></script>
+<script src="controllers/user.js"></script>
+<script src="./core/services/services_laderboard.js"></script>
+<script src="controllers/Settings_Lader.js"></script>
 
 </html>

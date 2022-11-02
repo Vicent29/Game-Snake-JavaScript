@@ -1,57 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Snake</title>
+        <link rel="shortcut icon" href="./img/icon_web.png" type="image/x-icon">
+        <link rel="stylesheet" href="./css/login_register.css">
+        <link rel="stylesheet" href="./css/style_header.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Snake</title>
-    <link rel="stylesheet" href="./css/login_register.css">
-    <link rel="stylesheet" href="./css/style_header.css">
-</head>
+    </head>
 
-<body>
-    <header class="header">
-        <div class="content-header">
-            <div id="header">
-                <div class="logo">
-                    <a href="./index.html" title="jagoampAMP"><img src="./img/logo_snake.png" hight="250px" width="150px"></img></a>
+    <body>
+        <header class="header">
+            <div class="content-header">
+                <div id="header">
+                    <div class="logo">
+                        <a href="../index.html" title="jagoampAMP"><img src="./img/logo_snake.png" hight="250px"
+                                width="150px"></img></a>
+                    </div>
+                </div>
+                <div class="jagoampNav" id="Navigasi">
+                    <div class="widget HTML">
+                        <input id="toggle" type="checkbox">
+                        <label class="menu-btn" for="toggle"><span class="show"></span><span class="hide"></span></label>
+                        <nav class="navigation">
+                            <ul>
+                                <li><a href="./index.html">Play</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="jagoamp-search">
+                    <a href="./login_register.html" class="det-button"></a>
+                </div>
+                <div class="darkjagoamp">
+                    <input aria-label="checkbox" class="checkbox" id="darkjagoamp" onclick="dark_mode()" type="checkbox">
+                    <label class="darkIcon" for="darkjagoamp"><span class="darkmode" title="Dark Theme"></span><span
+                            class="lightmode"></span></label>
                 </div>
             </div>
-            <div class="jagoampNav" id="Navigasi">
-                <div class="widget HTML">
-                    <input id="toggle" type="checkbox">
-                    <label class="menu-btn" for="toggle"><span class="show"></span><span class="hide"></span></label>
-                    <nav class="navigation">
-                        <ul>
-                            <li><a href="./index.html">Play</a></li>
-                            <li>
-                                <input class="expand" id="drop-1" type="checkbox">
-                                <label class="drop" for="drop-1">Leaderboard</label>
-                                <ul class="drop-menu">
-                                    <li><a href="#">Easy level</a></li>
-                                    <li><a href="#">Medium level</a></li>
-                                    <li><a href="#">Expert level</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+        </header>
+        <div class="div_login_register">
+            <div class="hero">
+                <div class="form-box">
+                    <div class="div button-box">
+                        <div id="btn"></div>
+                        <button type="button" class="toggle-btn" onclick="login_css()">Log In</button>
+                        <button type="button" class="toggle-btn" onclick="register_css()">Register</button>
+                    </div>
+
+                    <div class="social-icons">
+                        <img src="https://assets.codepen.io/3950346/IG.png" alt="" />
+                        <img src="https://assets.codepen.io/3950346/FB.png" alt="" />
+                        <img src="https://assets.codepen.io/3950346/YT.png" alt="" />
+                    </div>
+
+                    <form id="login" class="input-group" autocomplete="off">
+                        <div>
+                            <input type="text" class="input-field" id="log_username" placeholder="Username">
+                            <span class="error" id="log_username_error"></span>
+                        </div>
+                        <div>
+                            <input type="password" class="input-field" id="log_passwd" placeholder="Password">
+                            <span class="error" id="log_passwd_error"></span>
+                            <button class="btn_passwd" type="button" onclick="showpasswd('log_passwd')"><i id="btn_passwd_log" class="fa-solid fa-eye"></i></button>
+                        </div>
+                        <input type="checkbox" class="check-box"><span>Remember Password</span>
+                        <button type="submit" class="submit-btn">Log In</button>
+                    </form>
+
+                    <form id="register" class="input-group" autocomplete="off">
+                        <div>
+                            <input type="text" class="input-field" id="reg_username" placeholder="Username">
+                            <span class="error" id="reg_username_error"></span>
+                        </div>
+                        <div>
+                            <input type="text" class="input-field" id="reg_email" placeholder="Email">
+                            <span class="error" id="reg_email_error"></span>
+                        </div>
+                        <div>
+                            <input type="password" class="input-field" id="reg_passwd1" placeholder="Password">
+                            <span class="error" id="reg_passwd1_error"></span>
+                            <button class="btn_passwd" type="button" onclick="showpasswd('reg_passwd1')"><i id="btn_passwd1_reg" class="fa-xl fa-solid fa-eye"></i></button>
+                        </div>
+                        <div>
+                            <input type="password" class="input-field" id="reg_passwd2" placeholder="Repeat password">
+                            <span class="error" id="reg_passwd2_error"></span>
+                            <button class="btn_passwd" type="button" onclick="showpasswd('reg_passwd2')"><i id="btn_passwd2_reg" class="fa-xl fa-solid fa-eye"></i></button>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="acept_cond" class="check-box" value="acept"><span id="span_condition">I agree to the terms & conditions</span>
+                            <span class="error" id="register_condition_error"></span>
+                        </div>
+                        <button type="submit" class="submit-btn">Register</button>
+                    </form>
                 </div>
-            </div>
-            <div class="jagoamp-search">
-                <a href="./login_register.html" class="det-button"></a>
-            </div>
-            <div class="darkjagoamp">
-                <input aria-label="checkbox" class="checkbox" id="darkjagoamp" onclick="dark_mode()" type="checkbox">
-                <label class="darkIcon" for="darkjagoamp"><span class="darkmode" title="Dark Theme"></span><span class="lightmode"></span></label>
             </div>
         </div>
-    </header>
-    <div class="div_login_register">
-        <h1>Soy el login y el register</h1>
-    </div>
+    </body>
+    <!-- CONTROLLERS -->
     <script src="controllers/snake.js"></script>
     <script src="controllers/login_register.js"></script>
-</body>
-
+    <script src="core/services/service_login_register.js"></script>
+    
 </html>

@@ -1,0 +1,149 @@
+body {
+  width: 90%;
+  align-content: center;
+}
+
+.all_content {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  align-content: center;
+  background-color: #caebf6;
+  margin-left: 5%;
+  margin-top: 3%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 50px rgb(62, 224, 94);
+}
+
+.div_welcome {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div_welcome img {
+  width: 20%;
+}
+
+#welcome {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  background-color: black;
+  color: lightgreen;
+  font-family: "Indie Flower", cursive;
+  border-radius: 10px;
+}
+
+#welcome:hover {
+  color: antiquewhite;
+}
+
+.btns {
+  margin-top: 15%;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 100;
+}
+
+.btns a {
+  background-color: black;
+  width: 20%;
+  height: 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: lightcoral;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns a:hover {
+  background-color: lightcoral;
+  color: white;
+  font-size: large;
+}
+
+.div_serpienteRed {
+  margin-top: -20%;
+  animation: 10s 0s snakeRed_animation linear infinite;
+  z-index: 99;
+}
+
+.div_serpiente {
+  margin-top: 0%;
+  animation: 10s 0s snake_animation linear infinite;
+  z-index: 99;
+}
+
+.div_serpiente img,
+.div_serpienteRed img {
+  width: 13%;
+}
+
+@keyframes snake_animation {
+  0% {
+    transform: translateX(-40%) translateY(8%) rotate(40deg);
+  }
+  48% {
+    transform: translateX(35%) translateY(8%) rotate(40deg);
+  }
+
+  50% {
+    transform: translateX(35%) translateY(8%) rotate(-130deg);
+  }
+
+  100% {
+    transform: translateX(-40%) translateY(8%) rotate(-140deg);
+  }
+}
+
+@keyframes snakeRed_animation {
+  0% {
+    transform: translateX(38%) translateY(0%) rotate(-130deg);
+  }
+  48% {
+    transform: translateX(-38%) translateY(0%) rotate(-130deg);
+  }
+
+  50% {
+    transform: translateX(-38%) translateY(0%) rotate(40deg);
+  }
+
+  100% {
+    transform: translateX(38%) translateY(0%) rotate(40deg);
+  }
+}
+
+.expl {
+    background-color: black;
+    color: white;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: -2%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.expl h1 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+.callback {
+    position: relative;
+    display: flex;
+    left: -31%;
+    top: -23%;
+}
+
+.callback img {
+    width:3%
+}
+
+b{
+    color: rgb(87, 234, 114);
+}
+

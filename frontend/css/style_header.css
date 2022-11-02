@@ -427,7 +427,7 @@ a:link {
     height: 100vh;
   }
   #toggle:checked ~ .menu-btn .show:before {
-    content: "";
+    content: "\f060";
     display: none;
   }
   #toggle:checked ~ .menu-btn .hide {
@@ -554,4 +554,67 @@ body.jagoampDark a:hover {
 /* HIDE DIVS */
 .div_hide {
   opacity: 0;
+}
+
+.div_user {
+  width: 30%;
+  display: grid;
+  grid-template-columns: 30% 50% 20%;
+  grid-auto-flow: row;
+  grid-template-areas: "img name logout";
+  margin-left:65%;
+  background-color: transparent;
+}
+
+.div_user img {
+  grid-area: img;
+  grid-column: 1/2;
+  width: 47%;
+  position: relative;
+  left: 71%;
+  background-color:white;
+  border-radius: 30px;
+  margin-top: 2%;
+}
+
+.name {
+  grid-area: name;
+  grid-column: 2/3;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  font-weight: bold;
+  font-size: x-large;
+  height: 40px;
+  border-radius: 10px;
+  margin-top: 3%;
+}
+
+.btn_logout img{
+  grid-area: logout;
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  width: 40%;
+  margin-top: 4.5%;
+ 
+}
+
+.btn_logout{
+  background-color: transparent;
+  border: 0px;
+}
+
+.btn_logout::before {
+    content: "\f08b";
+    color: #d3ddff;
+    font-size: x-large;
+}
+
+jagoamp-search .btn_logout:hover{
+  color: red;
 }
