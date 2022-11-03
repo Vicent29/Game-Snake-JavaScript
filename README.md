@@ -30,7 +30,7 @@ On the other hand, you can also set different functionalities and sections of th
 
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/play1.png)
 
-![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/play1.png)
+![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/play2.png)
 
 **-View laderboards:**
 
