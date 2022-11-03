@@ -17,6 +17,7 @@ The snake game is a single player game in which you must control a snake which w
 On the other hand, you can also set different functionalities and sections of the game to your liking, so it is sure to be very fun.
 
 # **Game views**👀🎮
+![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/enterplay.png)
 
 **- View enter the Game**
 
