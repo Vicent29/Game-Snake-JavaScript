@@ -19,21 +19,27 @@ On the other hand, you can also set different functionalities and sections of th
 # **Game views**👀🎮
 
 **- View enter the Game**
+
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/enterplay.png)
 
 **- ¿How to play?**
+
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/howplay.png)
 
 **- View gamepaly**
+
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/play1.png)
 
-https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/play2.png
+![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/play1.png)
 
 **-View laderboards:**
+
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/laderboard.png)
 
 **-View Register**
+
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/register.png)
 
 **-View Login**
+
 ![](https://github.com/Vicent29/Game-Snake-JavaScript/blob/master/frontend/img/login.png)
