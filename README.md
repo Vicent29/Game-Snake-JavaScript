@@ -1,7 +1,7 @@
 # **The Snake Game in JavaScript**
 
 ## ¿How to install? 🤷🏿‍♂️​
-**The Snake Game** is a project in which it is necessary to install certain dependencies and execution environments for the backend part. It is recommended to follow the following indications and commands for a good installation and operation
+**The Snake Game** is a project in which it is necessary to install certain dependencies and execution environments for the backend part. It is recommended to follow the following indications and commands for a good installation and operation.
 
 1. Install [Node.js](https://nodejs.org/) v10+ to run.
 2. Install the corresponding dependencies for the operation of the backend:
